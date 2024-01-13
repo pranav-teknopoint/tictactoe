@@ -67,13 +67,13 @@
 
 .x{
     background-color: orange;
-    background-image: url(/assets/x.svg);
+    background-image: url(../assets/x.svg);
 }
 
 .o{
     /* background-color: violet;
     background-image: url(/assets/o.svg); */
-    background: chocolate url(/assets/o.svg) no-repeat center;
+    background: chocolate url(../assets/o.svg) no-repeat center;
 }
 #result{
     color: cornsilk;
