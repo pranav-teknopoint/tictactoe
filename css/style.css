@@ -142,4 +142,8 @@
     .o{
         background: chocolate url(../assets/mob.svg) no-repeat center;
     }
+
+    .flex-container{
+        flex-direction: column;
+    }
 }
