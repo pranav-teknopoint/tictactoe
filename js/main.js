@@ -13,6 +13,8 @@ var flag = 0;
 var winner = 0;
 var turn = document.getElementById("turn");
 var result = document.getElementById("result");
+let winx=0;
+let wino=0;
 
 const arro = [];
 const arrx = [];
@@ -31,7 +33,6 @@ document.querySelectorAll(".row").forEach((e, ind) => {
         return false;
       }
     };
-
     if (flag == 0) {
       if(checkclass() == false){
       turn.innerHTML = "Next turn: O";
@@ -42,6 +43,8 @@ document.querySelectorAll(".row").forEach((e, ind) => {
         if (win[i].every((j) => arrx.includes(j))) {
           result.innerHTML= "Player X wins!!";
           winner = 1;
+          winx++;
+          document.getElementById("scorex").innerHTML = winx;
         }
       }
     }
@@ -55,13 +58,24 @@ document.querySelectorAll(".row").forEach((e, ind) => {
         if (win[i].every((j) => arro.includes(j))) {
           result.innerHTML= "Player O wins!!";
           winner = 1;
+          wino++;
+          document.getElementById("scoreo").innerHTML = wino;
         }
       }
     }
   }
+  document.getElementById("reset").addEventListener('click', function(){
+    box.classList.remove("o","x");
+    winner = 0;
+    clearArray(arro);
+    clearArray(arrx);
+    result.innerHTML= "";
+  });
   });
 });
 
-document.getElementById("reset").addEventListener('click', function(){
-  location.reload();
-});
+function clearArray(array) {
+  while (array.length > 0) {
+    array.pop();
+  }
+}
